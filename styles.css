@@ -1,0 +1,697 @@
+/* 
+    box-sizing: details whether the border is within the width or outside 
+        borderbox => means border contained in total width.
+*/
+
+:root {
+    --color-accent: #5eead4;
+    --color-highlight: #ebebeb;
+    --background-accent: rgba(45, 212, 191, .1);
+    --color-a3: #CD131F;
+    --color-pink: #E0676D;
+    --color-black: #141414;
+    --color-greybg: #2b2b2b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+
+}
+
+body {
+    background-image: url("http://ahmedhelali.xyz/wp-content/uploads/2024/09/banner-rawpixel-90.png");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -30;
+    color: #ebebeb;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 6rem;
+
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: -30;
+    transition-duration: 200ms;
+}
+
+.underlay {
+    position: fixed;
+    background: #474747;
+    inset: 0;
+    opacity: 0.5;
+}
+
+p {
+    line-height: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Fredericka the Great', serif;
+}
+
+p::selection,
+li::selection,
+img::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection {
+    background: var(--color-a3);
+    color: var(--color-highlight);
+}
+
+.emphasis::selection {
+    background: var(--color-pink);
+    color: var(--color-highlight);
+}
+
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 10;
+}
+
+/* 
+    max-width => elements will not pass that width, good to keep elements in check.
+*/
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+/* 
+    font-weight => how "thick or bold" a text is, spectrum is 100 -- 900
+*/
+header h1 {
+    font-weight: 400;
+}
+
+header h4 {
+    font-weight: 400;
+}
+
+nav {
+    display: none;
+}
+
+nav a {
+    display: flex;
+    font-size: 0.9rem;
+    place-items: center;
+    gap: 0.25rem;
+}
+
+.nav-line {
+    width: 4rem;
+    height: 1.5px;
+    background-color: var(--color-highlight);
+    transition-duration: 200ms;
+}
+
+
+.social-link-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.social-link {
+    font-size: 1.2rem;
+    color: inherit;
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+
+.social-link:hover {
+    color: var(--color-a3)
+}
+
+header h1,
+header h4,
+.lightText {
+    color: var(--color-highlight);
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+    width: 100%;
+}
+
+section h2,
+.experience-card h3,
+.project-card h3,
+.publication-card h3 {
+    text-transform: uppercase;
+    font-size: 1.08rem;
+    font-weight: 550;
+    /* white-space: nowrap; */
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    padding: 1rem 0;
+}
+
+/* it's important to set h2 to relative positioning for the z-index to work */
+.sticky-header h2 {
+    position: relative;
+    z-index: 2;
+}
+
+/*
+ * inset: 0 makes it occupy the same dimensions as its parent.
+ * however, I wanted the before psuedo element to stretch over the whole page width so I used a trick from the following website:
+ * https://css-tricks.com/full-width-containers-limited-width-parents/
+ */
+.sticky-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: var(--color-greybg);
+    opacity: 0.8;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+}
+
+.about-content ul {
+    margin-top: 0;
+    /* Removes space between the paragraph and the list */
+    padding-left: 1.5rem;
+    /* Optional: adds some padding to indent the list */
+    max-width: 90%;
+    /* Makes the list narrower than the paragraphs */
+    margin-left: auto;
+    /* Centers the list horizontally */
+    margin-right: auto;
+    /* Centers the list horizontally */
+}
+
+.about-content ul li {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    /* Adds space between each list item */
+}
+
+/* 
+ * tansition-duration: "if anything is changing, over what time period is it changing?"
+ */
+.anchor-text {
+    color: var(--color-highlight);
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+
+.anchor-text:hover {
+    color: var(--color-highlight);
+}
+
+.anchor-text i {
+    transition-duration: 200ms;
+}
+
+.anchor-text:hover i {
+    padding-left: 1rem;
+}
+
+.emphasis,
+.card-header,
+.card-column>a {
+    color: var(--color-a3);
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+
+.experience-contents,
+.project-contents,
+.publication-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.card-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* 
+ * display: grid;
+ * This makes the element a grid container, enabling the use of grid layout for its children (grid items).
+ * grid-template-columns: repeat(1, minmax(0, 1fr));
+ * This defines the column structure of the grid:
+    * repeat(1, ...) creates 1 column.
+    * minmax(0, 1fr) ensures the column has a minimum width of 0 and maximum of 1fr (a fractional unit). 1fr makes the column take up the available space in the container.
+ * gap: 1rem; 
+ * This defines the gap (or space) between the grid items. In this case, it's 1rem, which is equivalent to the root element's font size (often 16px by default). 
+ */
+
+.experience-card,
+.project-card,
+.publication-card {
+
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.experience-card {
+    gap: 0.5rem;
+}
+
+.project-card,
+.publication-card {
+    gap: 1rem;
+}
+
+.tenure {
+    opacity: 0.7;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.experience-card p,
+.project-card p,
+.publication-card {
+    font-size: 0.9rem;
+}
+
+.cvevent-unordered-list {
+    list-style-type: none;
+    /* Removes the default bullet points */
+    padding-left: 0;
+    /* Removes left padding */
+}
+
+.cvevent-unordered-list li {
+    position: relative;
+    margin-bottom: 1rem;
+    /* Adds space between list items */
+    padding-left: 1.5rem;
+    /* Adds space for the icon */
+}
+
+.cvevent-unordered-list li::before {
+    content: "\f054";
+    /* Font Awesome icon (checkmark in this case) */
+    font-family: "Font Awesome 6 Free";
+    /* Specify the Font Awesome family */
+    font-weight: 900;
+    /* Make sure it's using the correct icon weight */
+    position: absolute;
+    left: 0;
+    /* Positions the icon on the left */
+    top: 0;
+    /* Aligns the icon vertically with the text */
+    color: var(--color-highlight);
+    /* Optional: use your desired color */
+    align-items: baseline;
+}
+
+.card-header {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.anchor-icon {
+    padding-left: 0.5rem;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    color: var(--color-highlight);
+}
+
+.tag {
+    display: flex;
+    gap: 0.3rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    background: var(--color-greybg);
+    align-items: center;
+}
+
+.tag p {
+    font-size: .85rem;
+
+}
+
+.tag i {
+    font-size: 1rem;
+
+}
+
+/* 
+ * overflow: hidden; controls what happens when the content of an element exceeds its size (its width or height). 
+    * Specifically, overflow: hidden; prevents the overflowing content from being visible by clipping it at the element's boundaries.
+    * you can use chatgpt to ask about the other options.
+*/
+.project-image-container,
+.publication-image-container {
+    max-width: 300px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 9;
+    order: 2;
+    border-radius: 0.25rem;
+
+}
+
+.project-image-container img,
+.publication-image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-image-container img {
+    object-position: top left;
+}
+
+.knot-tag {
+    width: 16px;
+    height: 16px;
+}
+
+/* Currently no stats so display none */
+
+.project-stat-link {
+    display: none;
+    /*flex*/
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+}
+
+
+/* 
+ * margin auto means it will automatically calulate the margin so it element does not span the whole screen width. comment it to see what happens when you hover over the "View Full Project Archive" link
+ */
+.project-archive-link {
+    position: relative;
+    color: var(--color-highlight);
+    text-decoration: none;
+    transition-duration: 200ms;
+    margin-right: auto;
+}
+
+.project-archive-link span {
+    transition-duration: 200ms;
+}
+
+.project-archive-link:hover span {
+    padding-left: 0.5rem;
+}
+
+
+
+/* 
+ * absloute positioning links itself to the closest relative parent!!!
+ */
+.project-archive-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    bottom: 0;
+    background-color: transparent;
+    transition-duration: 200ms;
+}
+
+.project-archive-link:hover::after {
+    background-color: var(--color-a3);
+}
+
+/*
+ * if it is a row justify is x-axis, align is y-axis. 
+ */
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+footer p {
+    font-size: 0.95rem;
+}
+
+.scroll-to-top {
+    text-decoration: none;
+    color: var(--color-highlight);
+    background: var(--color-a3);
+    padding: 0 1rem;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    overflow: hidden;
+    transition-duration: 200ms;
+}
+
+.scroll-to-top i {
+    transform: rotate(-45deg);
+    /* Rotates the icon by 30 degrees */
+}
+
+.scroll-to-top:hover {
+    /* opacity: 0.6; */
+    color: var(--color-a3);
+    background: var(--color-highlight);
+}
+
+
+@media (min-width: 640px) {
+
+    .experience-card,
+    .project-card,
+    .publication-card {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* 
+     * In grid-column or grid-row, the syntax span x / span y defines how many grid tracks (columns or rows) an element spans:
+        * span x: Specifies how many columns or rows to span from the starting position.
+        * / span y: Optionally specifies how many columns or rows to span until the ending position.
+     * Usually, just span x is enough, as / span y repeats the same behavior unless more complex grid placement is needed.
+     */
+    .card-column {
+        grid-column: span 3 / span 3;
+    }
+
+    .project-image-container,
+    .publication-image-container {
+        order: 0;
+    }
+
+    header {
+        max-width: unset;
+    }
+
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header h4 {
+        font-size: 1.4rem;
+    }
+
+    header p {
+        max-width: 300px;
+    }
+
+    .social-link-container {
+        gap: 1.5rem;
+    }
+
+    .social-link-container i {
+        font-size: 2rem;
+    }
+
+}
+
+
+@media (min-width: 1024px) {
+    body {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        padding: 6rem;
+        padding-top: 0rem;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        /* bec the max width property set down*/
+        margin-left: auto;
+        /* height: fit-content is crucial for sticky behaviour */
+        /* height: fit-content; */
+        max-height: 100vh;
+        justify-content: space-between;
+        padding-bottom: 200px;
+
+    }
+
+    header,
+    main {
+        padding-top: 6rem;
+        max-width: 600px;
+        width: 100%;
+
+    }
+
+    main {
+        padding-bottom: 40px;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header h4 {
+        font-size: 1.4rem;
+    }
+
+    header p {
+        max-width: 300px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 1rem;
+        transition-duration: 200ms;
+    }
+
+    nav a {
+        font-size: 1rem;
+        transition-duration: 200ms;
+    }
+
+    .nav-link {
+        margin-right: auto;
+    }
+
+    .nav-link.active p {
+        color: var(--color-a3);
+
+    }
+
+    .nav-link.active .nav-line {
+        width: 6rem;
+        background-color: var(--color-a3);
+    }
+
+    .nav-link:hover {
+        color: var(--color-a3);
+    }
+
+    .nav-link:hover .nav-line {
+        width: 6rem;
+        background-color: var(--color-a3);
+    }
+
+    .social-link-container {
+        gap: 1.5rem;
+    }
+
+    .social-link-container i {
+        font-size: 2rem;
+    }
+
+    main {
+        /* bec the max width property set down*/
+        margin-right: auto;
+
+    }
+
+
+
+    .sticky-header {
+        display: none;
+    }
+
+    .social-link-container {
+        align-self: flex-start;
+    }
+
+
+
+    /* 
+     * If you set a max width it is also imp to set a horizontal margin so everything is aligned centerly.
+    */
+    footer {
+        grid-column: span 2 / span 2;
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    footer p {
+        min-width: 480px;
+        width: 40%;
+    }
+
+
+
+}
