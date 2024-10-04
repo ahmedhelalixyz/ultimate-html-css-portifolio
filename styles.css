@@ -409,7 +409,6 @@ section h2,
     aspect-ratio: 16 / 9;
     order: 2;
     border-radius: 0.25rem;
-
 }
 
 .project-image-container img,
@@ -417,10 +416,15 @@ section h2,
     object-fit: cover;
     width: 100%;
     height: 100%;
+    transition: transform 0.5s ease;
+    /* Smooth transition for zoom-out effect */
 }
 
-.publication-image-container img {
-    object-position: top left;
+
+.project-image-container:hover img,
+.publication-image-container:hover img {
+    transform: scale(1.1);
+    /* Scales the image to 90% of its size (zoom out) */
 }
 
 .knot-tag {
