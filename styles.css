@@ -100,7 +100,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-width: 300px;
+    max-width: 500px;
 }
 
 header a {
@@ -453,6 +453,11 @@ section h2,
     transition-duration: 200ms;
     margin-right: auto;
 }
+
+/* .project-archive-link p {
+    font-family: 'Fredericka the Great', serif;
+    font-size: 1rem;
+} */
 
 .project-archive-link span {
     transition-duration: 200ms;
