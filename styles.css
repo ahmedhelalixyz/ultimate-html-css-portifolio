@@ -596,19 +596,21 @@ footer p {
         max-height: 100vh;
         justify-content: space-between;
         padding-bottom: 200px;
+        /* margin-bottom: auto; */
+        max-width: 400px;
 
     }
 
     header,
     main {
         padding-top: 6rem;
-        max-width: 600px;
         width: 100%;
 
     }
 
     main {
         padding-bottom: 40px;
+        max-width: 600px;
     }
 
     header h1 {
@@ -689,18 +691,24 @@ footer p {
      * If you set a max width it is also imp to set a horizontal margin so everything is aligned centerly.
     */
     footer {
-        grid-column: span 2 / span 2;
         flex-direction: row;
-        max-width: 1200px;
         margin: 0 auto;
         width: 100%;
     }
 
+    footer span {
+        min-width: 500px;
+        width: 30%;
+    }
+
     footer p {
-        min-width: 480px;
+        min-width: 500px;
         width: 40%;
     }
 
+    .scroll-to-top {
+        overflow: visible;
+    }
 
 
 }
