@@ -22,7 +22,7 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather sans', serif;
 
 }
 
@@ -49,13 +49,13 @@ body {
 
 .underlay {
     position: fixed;
-    background: #474747;
+    /* background: #474747; */
     inset: 0;
     opacity: 0.5;
 }
 
 p {
-    line-height: 1.5rem;
+    line-height: 1.65rem;
 }
 
 h1,
@@ -223,7 +223,7 @@ section h2,
 }
 
 .about-content p {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .about-content ul {
@@ -386,7 +386,8 @@ section h2,
 }
 
 .tag p {
-    font-size: .85rem;
+    font-family: "Merriweather", serif;
+    font-size: 0.8rem;
 
 }
 
@@ -494,7 +495,8 @@ footer {
 }
 
 footer p {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    width: 60%;
 }
 
 .scroll-to-top {
@@ -683,6 +685,7 @@ footer p {
     /* 
      * If you set a max width it is also imp to set a horizontal margin so everything is aligned centerly.
     */
+
     footer {
         grid-column: span 2 / span 2;
         flex-direction: row;
@@ -691,9 +694,13 @@ footer p {
         width: 100%;
     }
 
+
     footer p {
+        font-family: 'Merriweather sans', sans-serif;
         min-width: 480px;
         width: 40%;
+        margin-bottom: -100px;
+        font-size: 0.8rem;
     }
 
 
