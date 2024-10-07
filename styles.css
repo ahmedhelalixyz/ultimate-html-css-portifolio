@@ -536,6 +536,15 @@ footer p {
     transition-duration: 200ms;
 }
 
+.top-archive a h5 {
+    transition-duration: 1000ms;
+    transition: transform 1000ms;
+}
+
+.top-archive a i {
+    transition-duration: 200ms;
+}
+
 .top-archive a:hover {
     display: flex;
     flex-direction: row;
@@ -547,8 +556,34 @@ footer p {
     color: var(--color-highlight);
 }
 
-.top-archive a:hover i {}
+.top-archive a:hover i {
+    transform: translateX(-1rem);
+}
 
+table {
+    width: 100%;
+    text-align: left;
+    text-indent: 0;
+    margin-top: 3rem;
+    border: 1 solid #ebebeb;
+}
+
+thead {
+    border-bottom-width: 1rem;
+    border: 0 solid #ebebeb;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+thead::after,
+thead::before {
+    box-sizing: border-box;
+}
 
 
 @media (min-width: 640px) {
