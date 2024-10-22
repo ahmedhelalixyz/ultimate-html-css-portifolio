@@ -22,7 +22,7 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Merriweather sans', serif;
+    font-family: 'Merriweather sans', sans-serif;
 
 }
 
@@ -38,12 +38,6 @@ body {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 6rem;
-
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    z-index: -30;
     transition-duration: 200ms;
 }
 
@@ -110,7 +104,8 @@ header a {
 /* 
     font-weight => how "thick or bold" a text is, spectrum is 100 -- 900
 */
-header h1 {
+header h1,
+.top-archive h1 {
     font-weight: 400;
 }
 
@@ -131,7 +126,7 @@ nav a {
 
 .nav-line {
     width: 4rem;
-    height: 1.5px;
+    height: 2px;
     background-color: var(--color-highlight);
     transition-duration: 200ms;
 }
@@ -157,7 +152,8 @@ nav a {
 
 header h1,
 header h4,
-.lightText {
+.lightText,
+.top-archive h1 {
     color: var(--color-highlight);
 
 }
@@ -453,6 +449,7 @@ section h2,
     text-decoration: none;
     transition-duration: 200ms;
     margin-right: auto;
+    display: none;
 }
 
 .project-archive-link span {
@@ -524,6 +521,72 @@ footer p {
 }
 
 
+.top-archive {
+    padding: 6rem;
+    gap: 5rem;
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+
+
+
+.top-archive a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+
+.top-archive a h5 {
+    transition-duration: 1000ms;
+    transition: transform 1000ms;
+}
+
+.top-archive a i {
+    transition-duration: 200ms;
+}
+
+.top-archive a:hover {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+
+.top-archive a:hover h5 {
+    color: var(--color-highlight);
+}
+
+.top-archive a:hover i {
+    transform: translateX(-1rem);
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    text-indent: 0;
+    margin-top: 3rem;
+    border: 1 solid #ebebeb;
+}
+
+thead {
+    border-bottom-width: 1rem;
+    border: 0 solid #ebebeb;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+thead::after,
+thead::before {
+    box-sizing: border-box;
+}
+
+
 @media (min-width: 640px) {
 
     .experience-card,
@@ -566,6 +629,7 @@ footer p {
 
     .social-link-container {
         gap: 1.5rem;
+        padding-bottom: 10px;
     }
 
     .social-link-container i {
@@ -584,6 +648,7 @@ footer p {
     }
 
     header {
+        position: -webkit-sticky;
         position: sticky;
         top: 0;
         /* bec the max width property set down*/
@@ -591,8 +656,8 @@ footer p {
         /* height: fit-content is crucial for sticky behaviour */
         /* height: fit-content; */
         max-height: 100vh;
-        justify-content: space-between;
-        padding-bottom: 200px;
+        padding-bottom: 300px;
+        margin-bottom: 50px;
 
     }
 
@@ -608,7 +673,8 @@ footer p {
         padding-bottom: 40px;
     }
 
-    header h1 {
+    header h1,
+    .top-archive h1 {
         font-size: 3rem;
     }
 
@@ -626,6 +692,7 @@ footer p {
         flex: 1;
         gap: 1rem;
         transition-duration: 200ms;
+        padding-bottom: 5px;
     }
 
     nav a {
@@ -690,16 +757,17 @@ footer p {
         grid-column: span 2 / span 2;
         flex-direction: row;
         max-width: 1200px;
-        margin: 0 auto;
+        margin: auto;
         width: 100%;
+
     }
 
 
     footer p {
         font-family: 'Merriweather sans', sans-serif;
         min-width: 480px;
-        width: 40%;
-        margin-bottom: -100px;
+        width: 35%;
+        margin-bottom: -500px;
         font-size: 0.8rem;
     }
 
