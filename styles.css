@@ -126,7 +126,7 @@ nav a {
 
 .nav-line {
     width: 4rem;
-    height: 1.5px;
+    height: 2px;
     background-color: var(--color-highlight);
     transition-duration: 200ms;
 }
@@ -449,6 +449,7 @@ section h2,
     text-decoration: none;
     transition-duration: 200ms;
     margin-right: auto;
+    display: none;
 }
 
 .project-archive-link span {
@@ -628,6 +629,7 @@ thead::before {
 
     .social-link-container {
         gap: 1.5rem;
+        padding-bottom: 10px;
     }
 
     .social-link-container i {
@@ -646,6 +648,7 @@ thead::before {
     }
 
     header {
+        position: -webkit-sticky;
         position: sticky;
         top: 0;
         /* bec the max width property set down*/
@@ -653,8 +656,8 @@ thead::before {
         /* height: fit-content is crucial for sticky behaviour */
         /* height: fit-content; */
         max-height: 100vh;
-        justify-content: space-between;
-        padding-bottom: 200px;
+        padding-bottom: 300px;
+        margin-bottom: 50px;
 
     }
 
@@ -689,6 +692,7 @@ thead::before {
         flex: 1;
         gap: 1rem;
         transition-duration: 200ms;
+        padding-bottom: 5px;
     }
 
     nav a {
@@ -753,8 +757,9 @@ thead::before {
         grid-column: span 2 / span 2;
         flex-direction: row;
         max-width: 1200px;
-        margin: 0 auto;
+        margin: auto;
         width: 100%;
+
     }
 
 
@@ -762,7 +767,7 @@ thead::before {
         font-family: 'Merriweather sans', sans-serif;
         min-width: 480px;
         width: 35%;
-        margin-bottom: -100px;
+        margin-bottom: -500px;
         font-size: 0.8rem;
     }
 
