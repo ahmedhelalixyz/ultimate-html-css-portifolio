@@ -107,6 +107,11 @@ header a {
 header h1,
 .top-archive h1 {
     font-weight: 400;
+    transition-duration: 200ms;
+}
+
+header h1:hover {
+    color: var(--color-a3);
 }
 
 header h4 {
